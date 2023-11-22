@@ -1,18 +1,9 @@
 const express = require('express');
-const router = express.Router();
-const FormSchema = require('../../models/schemas/formSchema');
+const router = express.Router(); 
 const products = require('../../models/schemas/products.json');
+const FormSchema = require('../../models/schemas/formSchema');
+const User = require('../../models/schemas/user');  
 
- 
-router.post('/saveForm', async (req, res) => {
-  try {
-    const formData = new FormSchema(req.body);
-    const savedData = await formData.save(); 
-    res.status(200).json(savedData);
-  } catch (error) {
-    res.status(400).json({ errors: error.errors });
-  }
-});
 
 router.post('/fetchForbiddenProducts', async (req, res) => {
   try {

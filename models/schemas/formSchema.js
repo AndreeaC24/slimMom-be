@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema; 
 
-const formSchema = new mongoose.Schema({
+const formSchema = new mongoose.Schema({ 
   height: {
     type: Number,
     required: [true, "Height is required"],
@@ -30,6 +30,9 @@ const formSchema = new mongoose.Schema({
     type: [Boolean],
     required: [true, "Your blood type is required"],
   },
+  bmr: {
+    type: Number,
+  },   
   },
   { versionKey: false, timestamps: true }
 );

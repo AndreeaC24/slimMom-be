@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const bCrypt = require("bcryptjs"); 
 const Schema = mongoose.Schema;
-
+ 
 const user = new Schema({
   name:{
     type: String,
@@ -26,10 +26,10 @@ const user = new Schema({
     type: String,
     default: null,
   },
-  owner: {
+  forms: [{
     type: Schema.Types.ObjectId,
-    ref: 'user',
-  }
+    ref: 'formSchema',
+  }],
 });
 
 user.methods.setPass = function(password) {
